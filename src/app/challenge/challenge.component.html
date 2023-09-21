@@ -1,0 +1,24 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <input placeholder="Valor do pedido" type="number" name="amount" ngModel>
+    <input (click)="addAmount(f)" type="button" value="adicionar">
+    <br><br>
+    <input placeholder="Taxa adicional" type="number" name="additionalTax" ngModel>
+    <input (click)="addTax(f)" type="button" value="adicionar">
+    <br><br>
+    <input placeholder="Desconto" type="number" name="discount" ngModel>
+    <input (click)="addDiscount(f)" type="button" value="adicionar">
+    <br><br>
+    <input placeholder="Dividido em" type="number" name="totalOrder" ngModel>
+    <br><br>
+    <label>Método de pagamento:</label>
+    <br>
+    <select>
+        <option value="PicPay">PicPay</option>
+    </select>
+    <br><br>
+    <input placeholder="Id do favorecido" type="text" name="payeeId" ngModel>
+    <br><br>
+    <button type="submit">Gerar pagamento</button>
+    <br><br>
+    <a href={{orderProcessed.paymentLink}}>{{linkDescription}}</a>
+</form>
